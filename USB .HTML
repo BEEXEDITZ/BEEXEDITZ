@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Subscribe to Bee X Editz</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+    }
+
+    .video-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      z-index: 1;
+      filter: blur(1.5px) brightness(50%);
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    .subscribe-btn {
+      background-color: #FF0000;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 20px #ff0000;
+    }
+
+    .subscribe-btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff0000;
+    }
+
+    audio {
+      display: none;
+    }
+
+    #start-btn {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: #000;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔈 Background Music -->
+  <audio id="bg-audio" src="Manasha (Over Slowed).mp3" autoplay muted></audio>
+
+  <!-- 👆 Autoplay fallback button -->
+  <button id="start-btn">▶️ Click to Start Music</button>
+
+  <!-- 🎬 Shorts Grid -->
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/E5RalMZ_Yew?autoplay=1&mute=1&controls=0&loop=1&playlist=E5RalMZ_Yew" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/-dPMynkbWNU?autoplay=1&mute=1&controls=0&loop=1&playlist=-dPMynkbWNU" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/AEBdgdBON2w?autoplay=1&mute=1&controls=0&loop=1&playlist=AEBdgdBON2w" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/Ygn33QK_qVA?autoplay=1&mute=1&controls=0&loop=1&playlist=Ygn33QK_qVA" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/iDDNIOHf0iM?autoplay=1&mute=1&controls=0&loop=1&playlist=iDDNIOHf0iM" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/TSaTmRV7p3o?autoplay=1&mute=1&controls=0&loop=1&playlist=TSaTmRV7p3o" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/KzOgFR5gyK4?autoplay=1&mute=1&controls=0&loop=1&playlist=KzOgFR5gyK4" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/c95QisSjCvU?autoplay=1&mute=1&controls=0&loop=1&playlist=c95QisSjCvU" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/BELcgwPJWAs?autoplay=1&mute=1&controls=0&loop=1&playlist=BELcgwPJWAs" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/TYp_KmEG5Ls?autoplay=1&mute=1&controls=0&loop=1&playlist=TYp_KmEG5Ls" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/dlIRZxRczc8?autoplay=1&mute=1&controls=0&loop=1&playlist=dlIRZxRczc8" allow="autoplay"></iframe>
+    <iframe src="https://www.youtube.com/embed/E3yaqUodEHQ?autoplay=1&mute=1&controls=0&loop=1&playlist=E3yaqUodEHQ" allow="autoplay"></iframe>
+  </div>
+
+  <!-- 🚀 Overlay Content -->
+  <div class="content">
+    <h1>Subscribe to Bee X Editz!</h1>
+    <p>🔥 Watch the best edits in the game — only on Bee X Editz 🔥</p>
+    <a href="https://www.youtube.com/@BEEXEDITSZ" target="_blank">
+      <button class="subscribe-btn">🎯 SUBSCRIBE NOW</button>
+    </a>
+  </div>
+
+  <!-- 🎧 Script for Background Music -->
+  <script>
+    const audio = document.getElementById("bg-audio");
+    const startBtn = document.getElementById("start-btn");
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        audio.currentTime = 35;
+        audio.volume = 0.6;
+        audio.muted = false;
+        audio.play().catch(() => {
+          startBtn.style.display = "block";
+        });
+      }, 500);
+    });
+
+    startBtn.addEventListener("click", () => {
+      audio.currentTime = 35;
+      audio.volume = 0.6;
+      audio.muted = false;
+      audio.play();
+      startBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
